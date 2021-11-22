@@ -8,7 +8,6 @@
     <title>Laravel</title>
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
     <!-- Styles -->
 
@@ -17,15 +16,20 @@
     <section class='card'>
         <div class='card_inner'>
             <div class='card_inner__circle'>
-                <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/rocket.png'>
+                <img src='https://cdn-icons.flaticon.com/png/512/798/premium/798725.png?token=exp=1637617732~hmac=78f2f5fb1649e102b590858df89aae74'>
             </div>
             <div class='card_inner__header'>
-                <img src='https://i.pinimg.com/originals/68/eb/1f/68eb1f0348df1617f9536e17b82c87f0.jpg'>
+                <img src='https://i.gifer.com/86yA.gif'>
             </div>
             <div class='card_inner__content'>
                 <div class='title'>Early Bird</div>
-                <div class='price'>7€</div>
-                <div class="text">Some Content</div>
+                <div class='price'>5€</div>
+                <div class="text">Line UP:
+                    <br>
+                    LUIVI
+                    KING TRILL
+                    LAFLLAMME
+                </div>
             </div>
             <div class='card_inner__cta'>
                 <button>
@@ -37,15 +41,20 @@
     <section class='card'>
         <div class='card_inner'>
             <div class='card_inner__circle'>
-                <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/cog.png'>
+                <img src='https://cdn-icons-png.flaticon.com/128/638/638410.png'>
             </div>
             <div class='card_inner__header'>
-                <img src='https://wallpaperaccess.com/full/903683.jpg'>
+                <img src='https://media3.giphy.com/media/oiklTGjmLNJVm/giphy.gif'>
             </div>
             <div class='card_inner__content'>
                 <div class='title'>Regular</div>
-                <div class='price'>9€</div>
-                <div class="text">Some Content</div>
+                <div class='price'>6€</div>
+                <div class="text">Line UP:
+                    <br>
+                    LUIVI
+                    KING TRILL
+                    LAFLLAMME
+                </div>
             </div>
             <div class='card_inner__cta'>
                 <button>
@@ -59,15 +68,20 @@
     <section class='card'>
         <div class='card_inner'>
             <div class='card_inner__circle'>
-                <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/paperplane.png'>
+                <img src='https://cdn-icons-png.flaticon.com/512/6161/6161638.png'>
             </div>
             <div class='card_inner__header'>
-                <img src='https://cdn.wallpapersafari.com/44/97/gBN20r.jpg'>
+                <img src='https://data.whicdn.com/images/237944979/original.gif'>
             </div>
             <div class='card_inner__content'>
                 <div class='title'>Abendkasse</div>
-                <div class='price'>12€</div>
-                <div class="text">Some Content</div>
+                <div class='price'>7€</div>
+                <div class="text">Line UP:
+                    <br>
+                    LUIVI
+                    KING TRILL
+                    LAFLLAMME
+                </div>
             </div>
             <div class='card_inner__cta'>
                 <button>
@@ -76,6 +90,7 @@
             </div>
         </div>
     </section>
+
 </div>
 
 <!-- <div id="app">
@@ -85,12 +100,15 @@
 
 </html>
 <style>
-    @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700,300);
+    @font-face {
+        font-family: "MyWebFont";
+        src: url("/fonts/font.woff2") format("woff2");
+    }
 
     body {
-        font-family: "Yanone Kaffeesatz", sans-serif;
+        font-family: "MyWebFont";
         /* Location of the image */
-        background-image: url(https://data.whicdn.com/images/218810909/original.gif);
+        background-image: url(https://steamuserimages-a.akamaihd.net/ugc/957465844211323441/22EFD8128220CC5CF538745F87DA629B49CB32A5/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false);
 
         /* Background image is centered vertically and horizontally at all times */
         background-position: center center;
@@ -129,7 +147,7 @@ while the background image is loading */
     body .container .card {
         margin: 0 auto;
         display: inline-block;
-        margin-right: 30px;
+        margin-right: 10px;
         transform: scale(0);
         width: 280px;
         text-align: center;
@@ -158,15 +176,15 @@ while the background image is loading */
     }
 
     body .container .card:nth-of-type(1) {
-        background: -webkit-linear-gradient(45deg, #c96881 0%, #f7b695 100%);
+        background: -webkit-linear-gradient(45deg, #5e5e5e 0%, #080707 100%);
     }
 
     body .container .card:nth-of-type(2) {
-        background: -webkit-linear-gradient(45deg, #6B6ECC 0%, #89BFDF 100%);
+        background: -webkit-linear-gradient(45deg, #5e5e5e 0%, #080707 100%);
     }
 
     body .container .card:nth-of-type(3) {
-        background: -webkit-linear-gradient(45deg, #81B77B 0%, #A3E3C3 100%);
+        background: -webkit-linear-gradient(45deg, #5e5e5e 0%, #080707 100%);
     }
 
     body .container .card:hover .card_inner__header img {
@@ -179,8 +197,8 @@ while the background image is loading */
     }
 
     body .container .card:nth-of-type(1):hover .card_inner__circle img {
-        -webkit-animation: launch 1s forwards;
-        animation: launch 1s forwards;
+        -webkit-animation: launch 4s forwards;
+        animation: launch 4s forwards;
     }
 
     body .container .card:nth-of-type(1) .card_inner__circle img {
@@ -189,8 +207,8 @@ while the background image is loading */
     }
 
     body .container .card:nth-of-type(2):hover .card_inner__circle img {
-        -webkit-animation: spin 1s forwards;
-        animation: spin 1s forwards;
+        -webkit-animation: spin 1.5s forwards;
+        animation: spin 1.5s forwards;
     }
 
     body .container .card:nth-of-type(2) .card_inner__circle img {
@@ -198,8 +216,8 @@ while the background image is loading */
     }
 
     body .container .card:nth-of-type(3):hover .card_inner__circle img {
-        -webkit-animation: fly 1s forwards;
-        animation: fly 1s forwards;
+        -webkit-animation: fly 4s forwards;
+        animation: fly 4s forwards;
     }
 
     body .container .card:nth-of-type(3) .card_inner__circle img {
@@ -256,7 +274,7 @@ while the background image is loading */
     body .container .card_inner__content .price {
         color: white;
         font-weight: 800;
-        font-size: 70px;
+        font-size: 40px;
         text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.42);
     }
 
@@ -264,7 +282,7 @@ while the background image is loading */
         color: rgba(255, 255, 255, 0.6);
         font-weight: 100;
         margin-top: 20px;
-        font-size: 13px;
+        font-size: 12px;
         line-height: 16px;
     }
 
@@ -273,7 +291,7 @@ while the background image is loading */
         text-transform: uppercase;
         color: rgba(255, 255, 255, 0.64);
         margin-top: 40px;
-        font-size: 25px;
+        font-size: 15px;
         letter-spacing: 1px;
     }
 
@@ -288,11 +306,11 @@ while the background image is loading */
 
     body .container .card_inner__cta button {
         padding: 16px;
-        box-shadow: 0px 0px 40px 4px #F76583, 0px 0px 0px 2px rgba(255, 255, 255, 0.19) inset;
+        box-shadow: 0px 0px 40px 4px #65f79b, 0px 0px 0px 2px rgba(255, 255, 255, 0.19) inset;
         width: 100%;
-        background: -webkit-linear-gradient(-90deg, #fe5e7d 0%, #e5375b 100%);
+        background: -webkit-linear-gradient(-90deg, #5efeb6 0%, #2be0a7 100%);
         border: none;
-        font-family: "Yanone Kaffeesatz", sans-serif;
+        font-family: "MyWebFont", sans-serif;
         color: white;
         outline: none;
         font-size: 20px;
@@ -307,7 +325,7 @@ while the background image is loading */
     }
 
     body .container .card_inner__cta button:hover {
-        box-shadow: 0px 0px 60px 8px #F76583, 0px 0px 0px 2px rgba(255, 255, 255, 0.19) inset;
+        box-shadow: 0px 0px 60px 8px #65f79b, 0px 0px 0px 2px rgba(255, 255, 255, 0.19) inset;
     }
 
     @-webkit-keyframes launch {
@@ -467,179 +485,13 @@ while the background image is loading */
             transform: scale(1);
         }
     }
-
-    .flip-clock {
-        text-align: center;
-        perspective: 400px;
-        margin: 20px auto;
-    }
-
-    .flip-clock *,
-    .flip-clock *:before,
-    .flip-clock *:after {
-        box-sizing: border-box;
-    }
-
-    .flip-clock__piece {
-        display: inline-block;
-        margin: 0 5px;
-    }
-
-    .flip-clock__slot {
-        font-size: 2vw;
-    }
-
-    .card {
-        display: block;
-        position: relative;
-        padding-bottom: 0.72em;
-        font-size: 9vw;
-        line-height: 0.95;
-    }
-
-    .card__top,
-    .card__bottom,
-    .card__back::before,
-    .card__back::after {
-        display: block;
-        height: 0.72em;
-        color: #ccc;
-        background: #222;
-        padding: 0.25em 0.25em;
-        border-radius: 0.15em 0.15em 0 0;
-        backface-visiblity: hidden;
-        transform-style: preserve-3d;
-        width: 1.8em;
-        transform: translateZ(0);
-    }
-
-    .card__bottom {
-        color: #FFF;
-        position: absolute;
-        top: 50%;
-        left: 0;
-        border-top: solid 1px #000;
-        background: #393939;
-        border-radius: 0 0 0.15em 0.15em;
-        pointer-events: none;
-        overflow: hidden;
-    }
-
-    .card__bottom::after {
-        display: block;
-        margin-top: -0.72em;
-    }
-
-    .card__back::before,
-    .card__bottom::after {
-        content: attr(data-value);
-    }
-
-    .card__back {
-        position: absolute;
-        top: 0;
-        height: 100%;
-        left: 0%;
-        pointer-events: none;
-    }
-
-    .card__back::before {
-        position: relative;
-        z-index: -1;
-        overflow: hidden;
-    }
-
-    .flip .card__back::before {
-        -webkit-animation: flipTop 0.3s cubic-bezier(0.37, 0.01, 0.94, 0.35);
-        animation: flipTop 0.3s cubic-bezier(0.37, 0.01, 0.94, 0.35);
-        -webkit-animation-fill-mode: both;
-        animation-fill-mode: both;
-        transform-origin: center bottom;
-    }
-
-    .flip .card__back .card__bottom {
-        transform-origin: center top;
-        -webkit-animation-fill-mode: both;
-        animation-fill-mode: both;
-        -webkit-animation: flipBottom 0.6s cubic-bezier(0.15, 0.45, 0.28, 1);
-        animation: flipBottom 0.6s cubic-bezier(0.15, 0.45, 0.28, 1);
-    }
-
-    @-webkit-keyframes flipTop {
-        0% {
-            transform: rotateX(0deg);
-            z-index: 2;
-        }
-
-        0%,
-        99% {
-            opacity: 0.99;
-        }
-
-        100% {
-            transform: rotateX(-90deg);
-            opacity: 0;
-        }
-    }
-
-    @keyframes flipTop {
-        0% {
-            transform: rotateX(0deg);
-            z-index: 2;
-        }
-
-        0%,
-        99% {
-            opacity: 0.99;
-        }
-
-        100% {
-            transform: rotateX(-90deg);
-            opacity: 0;
-        }
-    }
-
-    @-webkit-keyframes flipBottom {
-
-        0%,
-        50% {
-            z-index: -1;
-            transform: rotateX(90deg);
-            opacity: 0;
-        }
-
-        51% {
-            opacity: 0.99;
-        }
-
-        100% {
-            opacity: 0.99;
-            transform: rotateX(0deg);
-            z-index: 5;
-        }
-    }
-
-    @keyframes flipBottom {
-
-        0%,
-        50% {
-            z-index: -1;
-            transform: rotateX(90deg);
-            opacity: 0;
-        }
-
-        51% {
-            opacity: 0.99;
-        }
-
-        100% {
-            opacity: 0.99;
-            transform: rotateX(0deg);
-            z-index: 5;
-        }
-    }
 </style>
 <script>
-    
+    var audio = document.createElement("AUDIO")
+    document.body.appendChild(audio);
+    audio.src = "https://fl11.2conv.com/ty/c6/dbth84l9tY3YytzZK8fglQ,1637623419/yt:OgQsg-LunkI-1/%5BFREE%5D%20TRAP%20METAL%20X%20HARD%20TYPE%20BEAT%20X%20FREESTYLE%20RAP%20INSTRUMENTAL%20NAPALM%20%28PROD.ERMASHOV%29.mp3";
+    document.body.addEventListener("mousemove", function() {
+        audio.play();
+    })
 </script>
 <script src="{{ mix('/js/app.js') }}"></script>
