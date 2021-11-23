@@ -17,21 +17,15 @@
 </head>
 
 <body id="body">
-    <iframe class="bottomCenter" src="https://maps.google.de/maps?hl=de&q=Club+Z%20%20%20%20%20%20Venlor+Str.+39%20%20%20%20%20Köln&t=ROADMAP&z=13&ie=utf8&iwloc=b&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-    <div class="topCenter">
-        <header class="header">
-            <h1 class="glitched">NO CAP</h1>
-        </header>
-        <a class="inspiration-button" href="https://instagram.com/0221nocap" target="_blank">INSTAGRAM</a>
-    </div>
+
     <div class='container'>
         <section class='card'>
             <div class='card_inner'>
                 <div class='card_inner__circle'>
-                    <img src='https://cdn-icons.flaticon.com/png/512/798/premium/798725.png?token=exp=1637617732~hmac=78f2f5fb1649e102b590858df89aae74'>
+                    <img src='https://cdn-icons-png.flaticon.com/512/3523/3523059.png'>
                 </div>
                 <div class='card_inner__header'>
-                    <img src='https://i.gifer.com/86yA.gif'>
+                    <img src='https://media2.giphy.com/media/3oKGzsVzLKlGHqxPwY/giphy.gif'>
                 </div>
                 <div class='card_inner__content'>
                     <div class='title'>Early Bird</div>
@@ -63,10 +57,10 @@
         <section class='card'>
             <div class='card_inner'>
                 <div class='card_inner__circle'>
-                    <img src='https://cdn-icons-png.flaticon.com/512/3037/3037150.png'>
+                    <img src='https://cdn-icons-png.flaticon.com/512/3522/3522624.png'>
                 </div>
                 <div class='card_inner__header'>
-                    <img src='https://media3.giphy.com/media/oiklTGjmLNJVm/giphy.gif'>
+                    <img src='https://steamuserimages-a.akamaihd.net/ugc/960846733352612281/776D5A177B981530190959C9B8932E3095BA6A94/?imw=512&imh=287&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true'>
                 </div>
                 <div class='card_inner__content'>
                     <div class='title'>Regular</div>
@@ -101,10 +95,10 @@
         <section class='card'>
             <div class='card_inner'>
                 <div class='card_inner__circle'>
-                    <img src='https://cdn-icons-png.flaticon.com/512/6161/6161638.png'>
+                    <img src='https://cdn-icons-png.flaticon.com/512/3522/3522242.png'>
                 </div>
                 <div class='card_inner__header'>
-                    <img src='https://data.whicdn.com/images/237944979/original.gif'>
+                    <img src='https://c.tenor.com/t0GDEK--GccAAAAC/travis-scott-highest-in-the-room.gif'>
                 </div>
                 <div class='card_inner__content'>
                     <div class='title'>Abendkasse</div>
@@ -324,7 +318,7 @@
     body {
         font-family: "MyWebFont";
         /* Location of the image */
-        background-image: url(https://steamuserimages-a.akamaihd.net/ugc/957465844211323441/22EFD8128220CC5CF538745F87DA629B49CB32A5/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false);
+        background-image: url(https://thumbs.gfycat.com/DefenselessFrighteningButterfly-size_restricted.gif);
 
         /* Background image is centered vertically and horizontally at all times */
         background-position: center center;
