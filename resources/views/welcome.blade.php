@@ -274,11 +274,12 @@
 
     .inspiration-button {
         font-family: Helvetica, sans-serif;
-        position: fixed;
+        position: absolute;
         display: inline-block;
         z-index: 100;
         bottom: 1rem;
         left: 50%;
+        bottom: -15%;
         transform: translate(-50%, 0%);
         color: white;
         text-decoration: none;
@@ -301,24 +302,23 @@
         left: 0%;
         right: 0;
         margin: auto;
-        width: 700px;
-        height: 115px;
+        width: 900px;
+        height: 110px;
         border: 2px solid green;
     }
 
     .topCenter {
-        position: absolute;
-        top: -67%;
-        bottom: 0;
+        position: fixed;
+        top: -60%;
+        bottom: 0%;
         left: 0%;
         right: 0;
         margin: auto;
-        width: 700px;
-        height: 200px;
+        width: 100%;
+        height: 30%;
         border: 2px solid green;
         font-family: "Raleway", sans-serif;
         background-color: #65f79b;
-
     }
 
     body {
