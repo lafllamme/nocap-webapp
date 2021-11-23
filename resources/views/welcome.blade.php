@@ -10,90 +10,133 @@
     <!-- Fonts -->
 
     <!-- Styles -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    </script>
+
 
 </head>
-<div class='container'>
-    <section class='card'>
-        <div class='card_inner'>
-            <div class='card_inner__circle'>
-                <img src='https://cdn-icons.flaticon.com/png/512/798/premium/798725.png?token=exp=1637617732~hmac=78f2f5fb1649e102b590858df89aae74'>
-            </div>
-            <div class='card_inner__header'>
-                <img src='https://i.gifer.com/86yA.gif'>
-            </div>
-            <div class='card_inner__content'>
-                <div class='title'>Early Bird</div>
-                <div class='price'>5€</div>
-                <div class="text">Line UP:
-                    <br>
-                    LUIVI
-                    KING TRILL
-                    LAFLLAMME
-                </div>
-            </div>
-            <div class='card_inner__cta'>
-                <button>
-                    <span>Buy Now</span>
-                </button>
-            </div>
-        </div>
-    </section>
-    <section class='card'>
-        <div class='card_inner'>
-            <div class='card_inner__circle'>
-                <img src='https://cdn-icons-png.flaticon.com/128/638/638410.png'>
-            </div>
-            <div class='card_inner__header'>
-                <img src='https://media3.giphy.com/media/oiklTGjmLNJVm/giphy.gif'>
-            </div>
-            <div class='card_inner__content'>
-                <div class='title'>Regular</div>
-                <div class='price'>6€</div>
-                <div class="text">Line UP:
-                    <br>
-                    LUIVI
-                    KING TRILL
-                    LAFLLAMME
-                </div>
-            </div>
-            <div class='card_inner__cta'>
-                <button>
-                    <span>
-                        <a href='#'>Buy Now</a>
-                    </span>
-                </button>
-            </div>
-        </div>
-    </section>
-    <section class='card'>
-        <div class='card_inner'>
-            <div class='card_inner__circle'>
-                <img src='https://cdn-icons-png.flaticon.com/512/6161/6161638.png'>
-            </div>
-            <div class='card_inner__header'>
-                <img src='https://data.whicdn.com/images/237944979/original.gif'>
-            </div>
-            <div class='card_inner__content'>
-                <div class='title'>Abendkasse</div>
-                <div class='price'>7€</div>
-                <div class="text">Line UP:
-                    <br>
-                    LUIVI
-                    KING TRILL
-                    LAFLLAMME
-                </div>
-            </div>
-            <div class='card_inner__cta'>
-                <button>
-                    <span>Buy Now</span>
-                </button>
-            </div>
-        </div>
-    </section>
 
-</div>
+<body id="body">
+    <iframe class="bottomCenter" src="https://maps.google.de/maps?hl=de&q=Club+Z%20%20%20%20%20%20Venlor+Str.+39%20%20%20%20%20Köln&t=ROADMAP&z=13&ie=utf8&iwloc=b&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+    <div class="topCenter">
+        <header class="header">
+            <h1 class="glitched">NO CAP</h1>
+        </header>
+        <a class="inspiration-button" href="https://instagram.com/0221nocap" target="_blank">INSTAGRAM</a>
+    </div>
+    <div class='container'>
+        <section class='card'>
+            <div class='card_inner'>
+                <div class='card_inner__circle'>
+                    <img src='https://cdn-icons.flaticon.com/png/512/798/premium/798725.png?token=exp=1637617732~hmac=78f2f5fb1649e102b590858df89aae74'>
+                </div>
+                <div class='card_inner__header'>
+                    <img src='https://i.gifer.com/86yA.gif'>
+                </div>
+                <div class='card_inner__content'>
+                    <div class='title'>Early Bird</div>
+                    <div class='price'>5€</div>
+                    <div class="text"> LUIVI
+                        <br>
+                        KING TRILL
+                        <br>
+                        LAFLLAMME
+                        <br>
+                        ELA
+                        <br>
+                        Young Soul
+                        <br>
+                        LGL GRAND
+                        <br>
+                        Aoruna & Anis & Youssou & Elezier
+                        <br>
+                        Lethalgoth77 & Y.Porsche & Baby Shiva
+                    </div>
+                </div>
+                <div class='card_inner__cta'>
+                    <button>
+                        <span>Buy Now</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section class='card'>
+            <div class='card_inner'>
+                <div class='card_inner__circle'>
+                    <img src='https://cdn-icons-png.flaticon.com/512/3037/3037150.png'>
+                </div>
+                <div class='card_inner__header'>
+                    <img src='https://media3.giphy.com/media/oiklTGjmLNJVm/giphy.gif'>
+                </div>
+                <div class='card_inner__content'>
+                    <div class='title'>Regular</div>
+                    <div class='price'>6€</div>
+                    <div class="text">
+                        LUIVI
+                        <br>
+                        KING TRILL
+                        <br>
+                        LAFLLAMME
+                        <br>
+                        ELA
+                        <br>
+                        Young Soul
+                        <br>
+                        LGL GRAND
+                        <br>
+                        Aoruna & Anis & Youssou & Elezier
+                        <br>
+                        Lethalgoth77 & Y.Porsche & Baby Shiva
+                    </div>
+                </div>
+                <div class='card_inner__cta'>
+                    <button>
+                        <span>
+                            <a href='#'>Buy Now</a>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section class='card'>
+            <div class='card_inner'>
+                <div class='card_inner__circle'>
+                    <img src='https://cdn-icons-png.flaticon.com/512/6161/6161638.png'>
+                </div>
+                <div class='card_inner__header'>
+                    <img src='https://data.whicdn.com/images/237944979/original.gif'>
+                </div>
+                <div class='card_inner__content'>
+                    <div class='title'>Abendkasse</div>
+                    <div class='price'>7€</div>
+                    <div class="text">LUIVI
+                        <br>
+                        KING TRILL
+                        <br>
+                        LAFLLAMME
+                        <br>
+                        ELA
+                        <br>
+                        Young Soul
+                        <br>
+                        LGL GRAND
+                        <br>
+                        Aoruna & Anis & Youssou & Elezier
+                        <br>
+                        Lethalgoth77 & Y.Porsche & Baby Shiva
+                    </div>
+                </div>
+                <div class='card_inner__cta'>
+                    <button>
+                        <span>Buy Now</span>
+                    </button>
+                </div>
+            </div>
+        </section>
 
-<!-- <div id="app">
+    </div>
+
+    <!-- <div id="app">
      <example-component></example-component>
  </div> -->
 </body>
@@ -103,6 +146,179 @@
     @font-face {
         font-family: "MyWebFont";
         src: url("/fonts/font.woff2") format("woff2");
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    header.header {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        transform: translateY(-50%);
+    }
+
+    header.header h1 {
+        font-size: 8rem;
+        color: #222222;
+        text-align: center;
+        margin-top: 0;
+        text-transform: uppercase;
+        font-weight: 900;
+    }
+
+    .glitch-window {
+        position: absolute;
+        top: 0;
+        left: -2px;
+        width: 100%;
+        color: #222222;
+        text-shadow: 2px 0 #f9f8f8, -1px 0 yellow, -2px 0 green;
+        overflow: hidden;
+        animation: crt-me 2500ms infinite linear alternate-reverse;
+    }
+
+    @-webkit-keyframes crt-me {
+        0% {
+            clip: rect(31px, 9999px, 94px, 0);
+        }
+
+        10% {
+            clip: rect(112px, 9999px, 76px, 0);
+        }
+
+        20% {
+            clip: rect(85px, 9999px, 77px, 0);
+        }
+
+        30% {
+            clip: rect(27px, 9999px, 97px, 0);
+        }
+
+        40% {
+            clip: rect(64px, 9999px, 98px, 0);
+        }
+
+        50% {
+            clip: rect(61px, 9999px, 85px, 0);
+        }
+
+        60% {
+            clip: rect(99px, 9999px, 114px, 0);
+        }
+
+        70% {
+            clip: rect(34px, 9999px, 115px, 0);
+        }
+
+        80% {
+            clip: rect(98px, 9999px, 129px, 0);
+        }
+
+        90% {
+            clip: rect(43px, 9999px, 96px, 0);
+        }
+
+        100% {
+            clip: rect(82px, 9999px, 64px, 0);
+        }
+    }
+
+    @keyframes crt-me {
+        0% {
+            clip: rect(31px, 9999px, 94px, 0);
+        }
+
+        10% {
+            clip: rect(112px, 9999px, 76px, 0);
+        }
+
+        20% {
+            clip: rect(85px, 9999px, 77px, 0);
+        }
+
+        30% {
+            clip: rect(27px, 9999px, 97px, 0);
+        }
+
+        40% {
+            clip: rect(64px, 9999px, 98px, 0);
+        }
+
+        50% {
+            clip: rect(61px, 9999px, 85px, 0);
+        }
+
+        60% {
+            clip: rect(99px, 9999px, 114px, 0);
+        }
+
+        70% {
+            clip: rect(34px, 9999px, 115px, 0);
+        }
+
+        80% {
+            clip: rect(98px, 9999px, 129px, 0);
+        }
+
+        90% {
+            clip: rect(43px, 9999px, 96px, 0);
+        }
+
+        100% {
+            clip: rect(82px, 9999px, 64px, 0);
+        }
+    }
+
+    .inspiration-button {
+        font-family: Helvetica, sans-serif;
+        position: fixed;
+        display: inline-block;
+        z-index: 100;
+        bottom: 1rem;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        color: white;
+        text-decoration: none;
+        padding: 0.75rem 1rem;
+        border-radius: 80px;
+        background: linear-gradient(270deg, #1edc7a, #04610f);
+        transition: transform 250ms ease;
+    }
+
+    .inspiration-button:hover,
+    .inspiration-button:focus,
+    .inspiration-button:active {
+        transform: translate(-50%, -10%);
+    }
+
+    .bottomCenter {
+        position: absolute;
+        top: 85%;
+        bottom: 0;
+        left: 0%;
+        right: 0;
+        margin: auto;
+        width: 700px;
+        height: 115px;
+        border: 2px solid green;
+    }
+
+    .topCenter {
+        position: absolute;
+        top: -67%;
+        bottom: 0;
+        left: 0%;
+        right: 0;
+        margin: auto;
+        width: 700px;
+        height: 200px;
+        border: 2px solid green;
+        font-family: "Raleway", sans-serif;
+        background-color: #65f79b;
+
     }
 
     body {
@@ -487,11 +703,18 @@ while the background image is loading */
     }
 </style>
 <script>
+    // A $( document ).ready() block.
+    $(document).ready(function() {
+        $("header").append("<div class='glitch-window'></div>");
+        //fill div with clone of real header
+        $("h1.glitched").clone().appendTo(".glitch-window");
+    });
     var audio = document.createElement("AUDIO")
     document.body.appendChild(audio);
-    audio.src = "https://fl11.2conv.com/ty/c6/dbth84l9tY3YytzZK8fglQ,1637623419/yt:OgQsg-LunkI-1/%5BFREE%5D%20TRAP%20METAL%20X%20HARD%20TYPE%20BEAT%20X%20FREESTYLE%20RAP%20INSTRUMENTAL%20NAPALM%20%28PROD.ERMASHOV%29.mp3";
+    audio.src = "https://media1.vocaroo.com/mp3/1ogAi70YcA6n";
+    audio.loop = false;
     document.body.addEventListener("mousemove", function() {
         audio.play();
-    })
+    });
 </script>
 <script src="{{ mix('/js/app.js') }}"></script>
