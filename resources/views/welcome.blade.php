@@ -17,7 +17,14 @@
 </head>
 
 <body id="body">
-
+    @if(\Session::has('error'))
+    <div class="alert alert-danger">{{ \Session::get('error') }}</div>
+    {{ \Session::forget('error') }}
+    @endif
+    @if(\Session::has('success'))
+    <div class="alert alert-success">{{ \Session::get('success') }}</div>
+    {{ \Session::forget('success') }}
+    @endif
     <div class='container'>
         <section class='card'>
             <div class='card_inner'>
@@ -48,9 +55,10 @@
                     </div>
                 </div>
                 <div class='card_inner__cta'>
-                    <button>
-                        <span>Buy Now</span>
-                    </button>
+                    <button onclick="document.getElementById('buytickets').click()">
+                        <span>
+                            <a id="buytickets" href="{{route('processTransaction', 'earlyBird')}}">Buy Now</a>
+                        </span> </button>
                 </div>
             </div>
         </section>
@@ -84,9 +92,9 @@
                     </div>
                 </div>
                 <div class='card_inner__cta'>
-                    <button>
+                    <button onclick="document.getElementById('buytickets1').click()">
                         <span>
-                            <a href='#'>Buy Now</a>
+                            <a id="buytickets1" href="{{route('processTransaction', 'regular')}}">Buy Now</a>
                         </span>
                     </button>
                 </div>
@@ -121,8 +129,8 @@
                     </div>
                 </div>
                 <div class='card_inner__cta'>
-                    <button>
-                        <span>Buy Now</span>
+                    <button onclick="document.getElementById('buytickets2').click()">
+                        <a id="buytickets2" href="{{route('processTransaction', 'abendKasse')}}">Buy Now</a>
                     </button>
                 </div>
             </div>

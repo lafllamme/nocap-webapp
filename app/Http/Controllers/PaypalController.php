@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
+
 class PayPalController extends Controller
 {
     /**
@@ -21,8 +22,19 @@ class PayPalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function processTransaction(Request $request)
+    public function processTransaction(Request $request, String $id)
     {
+        $amount = 0;
+        if ($id === 'earlyBird') {
+            $amount = 5;
+        } elseif ($id === 'regular') {
+            $amount = 6;
+        } elseif ($id === 'abendKasse') {
+            $amount = 7;
+        }
+
+        dd($amount);
+
         $provider = new PayPalClient;
         $provider->setApiCredentials(config('paypal'));
         $paypalToken = $provider->getAccessToken();
@@ -36,8 +48,8 @@ class PayPalController extends Controller
             "purchase_units" => [
                 0 => [
                     "amount" => [
-                        "currency_code" => "USD",
-                        "value" => "1000.00"
+                        "currency_code" => "EUR",
+                        "value" => $amount * 1.05,
                     ]
                 ]
             ]

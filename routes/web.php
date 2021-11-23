@@ -21,8 +21,8 @@ Route::get('/', function () {
 
 Route::view('pay', 'payment');
 
-Route::get('buy', [PayPalController::class, 'createTransaction'])->name('createTransaction');
-Route::get('process-transaction', [PayPalController::class, 'processTransaction'])->name('processTransaction');
+//Route::get('buy', [PayPalController::class, 'createTransaction'])->name('createTransaction');
+Route::get('buy/{id}', [PayPalController::class, 'processTransaction'])->name('processTransaction');
 Route::get('success-transaction', [PayPalController::class, 'successTransaction'])->name('successTransaction');
 Route::get('cancel-transaction', [PayPalController::class, 'cancelTransaction'])->name('cancelTransaction');
 
