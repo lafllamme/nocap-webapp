@@ -12,19 +12,13 @@
     <!-- Styles -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     </script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 
 </head>
 
 <body id="body">
-    @if(\Session::has('error'))
-    <div class="alert alert-danger">{{ \Session::get('error') }}</div>
-    {{ \Session::forget('error') }}
-    @endif
-    @if(\Session::has('success'))
-    <div class="alert alert-success">{{ \Session::get('success') }}</div>
-    {{ \Session::forget('success') }}
-    @endif
     <div class='container'>
         <section class='card'>
             <div class='card_inner'>
@@ -62,7 +56,8 @@
                 </div>
             </div>
         </section>
-        <section class='card'>
+
+        <!-- <section class='card'>
             <div class='card_inner'>
                 <div class='card_inner__circle'>
                     <img src='https://cdn-icons-png.flaticon.com/512/3522/3522624.png'>
@@ -99,7 +94,7 @@
                     </button>
                 </div>
             </div>
-        </section>
+        </section> -->
         <section class='card'>
             <div class='card_inner'>
                 <div class='card_inner__circle'>
@@ -136,6 +131,31 @@
             </div>
         </section>
 
+        <div class="bottomCenter">
+            <center>
+                @if(\Session::has('error'))
+                <div class="alert alert-danger">{{ \Session::get('error') }}</div>
+                {{ \Session::forget('error') }}
+                @endif
+                @if(\Session::has('success'))
+                <div class="alert alert-success">{{ \Session::get('success') }}</div>
+
+                <div class="my-sm-3">
+                    <div class="col-md-12">
+                        <h2>Das ist dein Ticket!</h2>
+
+                        <!-- <button class="btn btn-success" type="submit">Generate</button> -->
+
+                        <a href="{{\Session::get('url')}}" class="btn btn-light" download>Download</a>
+                        <br><br>
+                        <img src="{{\Session::get('url')}}" width="150" height="150">
+                    </div>
+                </div>
+
+                {{ \Session::forget('success') }}
+                @endif
+            </center>
+        </div>
     </div>
 
     <!-- <div id="app">
@@ -150,7 +170,13 @@
         src: url("/fonts/font.woff2") format("woff2");
     }
 
+    body {
+        min-height: 100vh;
+    }
+
     * {
+        margin: 0;
+        padding: 0;
         box-sizing: border-box;
     }
 
@@ -299,14 +325,13 @@
 
     .bottomCenter {
         position: absolute;
-        top: 85%;
+        top: 140%;
         bottom: 0;
-        left: 0%;
+        left: -35%;
         right: 0;
         margin: auto;
-        width: 900px;
-        height: 110px;
-        border: 2px solid green;
+        width: 600px;
+        height: 30%;
     }
 
     .topCenter {
@@ -499,7 +524,6 @@ while the background image is loading */
     body .container .card_inner__content .text {
         color: rgba(255, 255, 255, 0.6);
         font-weight: 100;
-        margin-top: 20px;
         font-size: 12px;
         line-height: 16px;
     }

@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
-
+use Illuminate\Support\Facades\Storage;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use App\Models\Payment;
 class PayPalController extends Controller
 {
     /**
@@ -14,7 +16,7 @@ class PayPalController extends Controller
      */
     public function createTransaction()
     {
-        return view('payment');
+        return view('welcome');
     }
 
     /**
@@ -33,8 +35,6 @@ class PayPalController extends Controller
             $amount = 7;
         }
 
-        dd($amount);
-
         $provider = new PayPalClient;
         $provider->setApiCredentials(config('paypal'));
         $paypalToken = $provider->getAccessToken();
@@ -49,7 +49,7 @@ class PayPalController extends Controller
                 0 => [
                     "amount" => [
                         "currency_code" => "EUR",
-                        "value" => $amount * 1.05,
+                        "value" => round($amount * 1.05, 2)
                     ]
                 ]
             ]
@@ -86,10 +86,63 @@ class PayPalController extends Controller
         $provider->getAccessToken();
         $response = $provider->capturePaymentOrder($request['token']);
 
+
+        function flatten($array)
+        {
+            $return = array();
+            while (count($array)) {
+                $value = array_shift($array);
+                if (is_array($value))
+                    foreach ($value as $sub)
+                        $array[] = $sub;
+                else
+                    $return[] = $value;
+            }
+            return $return;
+        }
+
+        //FIX ME: find better solution
+        $cleanedArr = flatten($response);
+        $transactionCode = $cleanedArr[17];
+        $personName = $cleanedArr[5] . ' ' . $cleanedArr[6];
+        $email = $cleanedArr[2];
+        $amount = $cleanedArr[23];
+
+        $qrData = [
+            $personName, $email, $amount, $transactionCode
+        ];
+
+        $shortString = [$qrData[0], $qrData[3]];
+        $qrString = implode("|", $shortString);
+        $qrcode = QrCode::size(500)
+            ->style('round')
+            //->gradient(131, 58, 180, 53, 159, 196, 'radial')
+            ->backgroundColor(163,255,180)
+            ->errorCorrection('H')
+            ->generate($qrString);
+
+        $date = date("Ymd");
+
+        $fileName = $transactionCode . "QrCode.svg";
+        $folderName = "transaction/" . $date . "/" . $fileName;
+        $finalFolderName = str_replace(' ', '', $folderName);
+
+
+        Storage::disk('public')->put($finalFolderName, $qrcode);
+        $url = Storage::url($finalFolderName);
+
+        $payment = new Payment;
+        $payment->transactionId = $transactionCode;
+        $payment->name = $personName;
+        $payment->amount = $amount;
+        $payment->email = $email;
+        $payment->save();
+
         if (isset($response['status']) && $response['status'] == 'COMPLETED') {
             return redirect()
                 ->route('createTransaction')
-                ->with('success', 'Transaction complete.');
+                ->with('success', 'Transaction complete.')
+                ->with('url', $url);
         } else {
             return redirect()
                 ->route('createTransaction')
