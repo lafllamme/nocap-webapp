@@ -43,7 +43,7 @@
                         <br>
                         LGL GRAND
                         <br>
-                        Aoruna & Anis & Youssou & Elezier
+                        Arouna & Anis & Youssou & Eliezier
                         <br>
                         Lethalgoth77 & Y.Porsche & Baby Shiva
                     </div>
