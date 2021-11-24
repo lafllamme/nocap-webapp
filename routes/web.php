@@ -22,7 +22,9 @@ Route::get('/', function () {
 });
 Route::get('/setup', function () {
     $link = Artisan::call('storage:link');
-    $migrate = Artisan::call('migrate');
+    $migrate = Artisan::call('migrate',  [
+        '--force' => true
+    ]);
     dd($link, $migrate);
 })->middleware('auth');
 
