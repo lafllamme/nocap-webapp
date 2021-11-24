@@ -142,7 +142,7 @@
 
                 <div class="my-sm-3">
                     <div class="col-md-12">
-                        <h2>Das ist dein Ticket!</h2>
+                        <h2 class="text">Das ist dein Ticket!</h2>
 
                         <!-- <button class="btn btn-success" type="submit">Generate</button> -->
 
@@ -172,6 +172,10 @@
 
     body {
         min-height: 100vh;
+    }
+
+    h2 {
+        color: white;
     }
 
     * {
