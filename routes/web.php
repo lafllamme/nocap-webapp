@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\PayPalController;
+use App\Http\Controllers\PaypalController;
 use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\GuestController;
 
@@ -32,10 +32,10 @@ Route::post('edit/{id}', [GuestController::class, 'edit']);
 Route::post('delete/{id}', [GuestController::class, 'delete']);
 Route::post('create', [GuestController::class, 'create']);
 
-Route::get('buy', [PayPalController::class, 'createTransaction'])->name('createTransaction');
-Route::get('buy/{id}', [PayPalController::class, 'processTransaction'])->name('processTransaction');
-Route::get('success-transaction', [PayPalController::class, 'successTransaction'])->name('successTransaction');
-Route::get('cancel-transaction', [PayPalController::class, 'cancelTransaction'])->name('cancelTransaction');
+Route::get('buy', [PaypalController::class, 'createTransaction'])->name('createTransaction');
+Route::get('buy/{id}', [PaypalController::class, 'processTransaction'])->name('processTransaction');
+Route::get('success-transaction', [PaypalController::class, 'successTransaction'])->name('successTransaction');
+Route::get('cancel-transaction', [PaypalController::class, 'cancelTransaction'])->name('cancelTransaction');
 
 Auth::routes();
 
