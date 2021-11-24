@@ -4,8 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Laravel</title>
+    <meta name="description" 
+      content="A place for young and talented artists">
+    <title>No Cap Events</title>
 
     <!-- Fonts -->
 
