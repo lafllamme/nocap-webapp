@@ -24,7 +24,7 @@ Route::get('/setup', function () {
     $link = Artisan::call('storage:link');
     $migrate = Artisan::call('migrate');
     dd($link, $migrate);
-});
+})->middleware('auth');
 
 // Route::view('pay', 'payment');
 Route::get('guests', [GuestController::class, 'index'])->name('guests')->middleware('auth');
