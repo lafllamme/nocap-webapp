@@ -4,8 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" 
-      content="A place for young and talented artists">
+    <meta name="description" content="A place for young and talented artists">
     <title>No Cap Events</title>
 
     <!-- Fonts -->
@@ -32,21 +31,23 @@
                 <div class='card_inner__content'>
                     <div class='title'>Early Bird</div>
                     <div class='price'>5€</div>
-                    <div class="text"> LUIVI
+                    <div class="text">ELA
+                        <br>
+                        GABAFROMEARTH
                         <br>
                         KING TRILL
                         <br>
-                        LAFLLAMME
+                        LUIVI
                         <br>
-                        ELA
-                        <br>
-                        Young Soul
+                        Yung Soul
                         <br>
                         LGL GRAND
                         <br>
                         Arouna & Anis & Youssou & Eliezer
                         <br>
-                        Lethalgoth77 & Y.Porsche & Baby Shiva
+                        LAFLLAMME
+                        <br>
+                        Lethalgoth777 & Y.Porsche & Baby Shiva
                     </div>
                 </div>
                 <div class='card_inner__cta'>
@@ -107,21 +108,23 @@
                 <div class='card_inner__content'>
                     <div class='title'>Abendkasse</div>
                     <div class='price'>7€</div>
-                    <div class="text">LUIVI
+                    <div class="text">ELA
+                        <br>
+                        GABAFROMEARTH
                         <br>
                         KING TRILL
                         <br>
-                        LAFLLAMME
+                        LUIVI
                         <br>
-                        ELA
-                        <br>
-                        Young Soul
+                        Yung Soul
                         <br>
                         LGL GRAND
                         <br>
-                        Aoruna & Anis & Youssou & Elezier
+                        Arouna & Anis & Youssou & Eliezer
                         <br>
-                        Lethalgoth77 & Y.Porsche & Baby Shiva
+                        LAFLLAMME
+                        <br>
+                        Lethalgoth777 & Y.Porsche & Baby Shiva
                     </div>
                 </div>
                 <div class='card_inner__cta'>
@@ -529,7 +532,7 @@ while the background image is loading */
     body .container .card_inner__content .text {
         color: rgba(255, 255, 255, 0.6);
         font-weight: 100;
-        font-size: 12px;
+        font-size: 10px;
         line-height: 16px;
     }
 
@@ -737,9 +740,9 @@ while the background image is loading */
     const d = new Date('November 27, 2021 12:00');
     const now = new Date();
 
-    if (d - now < 0){
-        document.getElementById('card1').style.display="none";
-        }
+    if (d - now < 0) {
+        document.getElementById('card1').style.display = "none";
+    }
 
     // A $( document ).ready() block.
     $(document).ready(function() {
