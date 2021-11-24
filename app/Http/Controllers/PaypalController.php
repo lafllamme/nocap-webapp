@@ -7,7 +7,7 @@ use Srmklive\PayPal\Services\PayPal as PayPalClient;
 use Illuminate\Support\Facades\Storage;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use App\Models\Payment;
-class PayPalController extends Controller
+class PaypalController extends Controller
 {
     /**
      * create transaction.
