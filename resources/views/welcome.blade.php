@@ -20,7 +20,7 @@
 
 <body id="body">
     <div class='container'>
-        <section class='card'>
+        <section class='card' id="card1">
             <div class='card_inner'>
                 <div class='card_inner__circle'>
                     <img src='https://cdn-icons-png.flaticon.com/512/3523/3523059.png'>
@@ -729,6 +729,13 @@ while the background image is loading */
     }
 </style>
 <script>
+    const d = new Date('November 27, 2021 12:00');
+    const now = new Date();
+
+    if (d - now < 0){
+        document.getElementById('card1').style.display="none";
+        }
+
     // A $( document ).ready() block.
     $(document).ready(function() {
         $("header").append("<div class='glitch-window'></div>");
