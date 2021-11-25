@@ -20,11 +20,7 @@
 
 <body id="body">
 
-    <div class="container">
-        <header>
-            <!-- <h1>Pure <strong>CSS</strong> Progress</h1>
-            <p>... a pretty liquid progress-bar.</p> -->
-        </header>
+    <div class="container" id="chart">
         <section>
             <article>
 
@@ -61,7 +57,6 @@
             <li><span id="seconds"></span>Second</li>
         </ul>
     </div>
-
 
     <div class='container'>
         <section class='card' id="card1">
@@ -180,29 +175,29 @@
         </section>
 
         <div class="bottomCenter">
-            <center>
-                @if(\Session::has('error'))
-                <div class="alert alert-danger">{{ \Session::get('error') }}</div>
-                {{ \Session::forget('error') }}
-                @endif
-                @if(\Session::has('success'))
-                <div class="alert alert-success">{{ \Session::get('success') }}</div>
 
-                <div class="my-sm-3">
-                    <div class="col-md-12">
-                        <h2 class="text">Das ist dein Ticket!</h2>
+            @if(\Session::has('error'))
+            <div class="alert alert-danger">{{ \Session::get('error') }}</div>
+            {{ \Session::forget('error') }}
+            @endif
+            @if(\Session::has('success'))
+            <div class="alert alert-success">{{ \Session::get('success') }}</div>
 
-                        <!-- <button class="btn btn-success" type="submit">Generate</button> -->
+            <div class="my-sm-3">
+                <div class="col-md-12">
+                    <h2 class="text">Das ist dein Ticket!</h2>
 
-                        <a href="{{Storage::url(\Session::get('fileName'))}}" id="fileRequest" class="btn btn-light" target="_blank">Download</a>
-                        <br><br>
-                        <img src="{{\Session::get('url')}}" width="150" height="150">
-                    </div>
+                    <!-- <button class="btn btn-success" type="submit">Generate</button> -->
+
+                    <a href="{{Storage::url(\Session::get('fileName'))}}" id="fileRequest" class="btn btn-light" target="_blank">Download</a>
+                    <br><br>
+                    <img src="{{\Session::get('url')}}" width="150" height="150">
                 </div>
+            </div>
 
-                {{ \Session::forget('success') }}
-                @endif
-            </center>
+            {{ \Session::forget('success') }}
+            @endif
+
         </div>
     </div>
 
@@ -223,7 +218,6 @@
         height: 100%;
         min-height: 100%;
         max-width: 80%;
-        overflow: hidden;
     }
 
 
@@ -442,14 +436,10 @@
     }
 
     .bottomCenter {
-        position: absolute;
-        top: 140%;
-        bottom: 0;
-        left: -35%;
-        right: 0;
+        position: relative;
+        bottom: -8em;
         margin: auto;
-        width: 600px;
-        height: 30%;
+        width: auto;
     }
 
     .topCenter {
@@ -1673,62 +1663,6 @@ END // CHART'S RULES
             }, 0)
     }());
 
-    const countDownClock = (number = 100, format = 'seconds') => {
-
-        const d = document;
-        const daysElement = d.querySelector('.days');
-        const hoursElement = d.querySelector('.hours');
-        const minutesElement = d.querySelector('.minutes');
-        const secondsElement = d.querySelector('.seconds');
-        let countdown;
-        convertFormat(format);
-
-
-        function convertFormat(format) {
-            switch (format) {
-                case 'seconds':
-                    return timer(number);
-                case 'minutes':
-                    return timer(number * 60);
-                case 'hours':
-                    return timer(number * 60 * 60);
-                case 'days':
-                    return timer(number * 60 * 60 * 24);
-            }
-        }
-
-        function timer(seconds) {
-            const now = Date.now();
-            const then = now + seconds * 1000;
-
-            countdown = setInterval(() => {
-                const secondsLeft = Math.round((then - Date.now()) / 1000);
-
-                if (secondsLeft <= 0) {
-                    clearInterval(countdown);
-                    return;
-                };
-
-                displayTimeLeft(secondsLeft);
-
-            }, 1000);
-        }
-
-        function displayTimeLeft(seconds) {
-            daysElement.textContent = Math.floor(seconds / 86400);
-            hoursElement.textContent = Math.floor((seconds % 86400) / 3600);
-            minutesElement.textContent = Math.floor((seconds % 86400) % 3600 / 60);
-            secondsElement.textContent = seconds % 60 < 10 ? `0${seconds % 60}` : seconds % 60;
-        }
-    }
-
-
-    /*
-      start countdown
-      enter number and format
-      days, hours, minutes or seconds
-    */
-    countDownClock(2.7, 'days');
     const d = new Date('November 27, 2021 12:00');
     const now = new Date();
 
@@ -1743,6 +1677,9 @@ END // CHART'S RULES
             window.onbeforeunload = function() {
                 return true;
             };
+            $('#chart').hide();
+            $('#countdown').hide();
+
         }
 
 
