@@ -19,6 +19,32 @@
 </head>
 
 <body id="body">
+    <center>
+        <section class="countdown-container">
+
+            <div class="days-container">
+                <div class="days"></div>
+                <div class="days-label">days</div>
+            </div>
+
+            <div class="hours-container">
+                <div class="hours"></div>
+                <div class="hours-label">hours</div>
+            </div>
+
+            <div class="minutes-container">
+                <div class="minutes"></div>
+                <div class="minutes-label">minutes</div>
+            </div>
+
+            <div class="seconds-container">
+                <div class="seconds"></div>
+                <div class="seconds-label">seconds</div>
+            </div>
+
+        </section>
+    </center>
+    
     <div class='container'>
         <section class='card' id="card1">
             <div class='card_inner'>
@@ -150,7 +176,7 @@
 
                         <!-- <button class="btn btn-success" type="submit">Generate</button> -->
 
-                        <a href="{{\Session::get('url')}}" class="btn btn-light" download>Download</a>
+                        <a href="{{Storage::url(\Session::get('fileName'))}}" id="fileRequest" class="btn btn-light" target="_blank">Download</a>
                         <br><br>
                         <img src="{{\Session::get('url')}}" width="150" height="150">
                     </div>
@@ -174,9 +200,69 @@
         src: url("/fonts/font.woff2") format("woff2");
     }
 
-    body {
-        min-height: 100vh;
+    body,
+    html {
+        height: 100%;
+        min-height: 100%;
     }
+
+    .countdown-container {
+        display: flex;
+        width: 70%;
+        max-width: 40%;
+        justify-content: space-between;
+    }
+
+    .days-container,
+    .hours-container,
+    .minutes-container,
+    .seconds-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.1);
+        border: 5px solid rgba(255, 255, 255, 0.3);
+        width: 140px;
+        height: 140px;
+        border-radius: 99px;
+    }
+
+    .days,
+    .hours,
+    .minutes,
+    .seconds {
+        font-size: 2em;
+        margin: 8px 0;
+    }
+
+
+    .days-label,
+    .hours-label,
+    .minutes-label,
+    .seconds-label {
+        text-transform: uppercase;
+        margin-bottom: 6px;
+        margin-left: 6px;
+        margin-right: 6px;
+    }
+
+    @media (max-width: 800px) {
+
+        .countdown-container {
+            max-width: 45%;
+        }
+
+        .days-container,
+        .hours-container,
+        .minutes-container,
+        .seconds-container {
+            font-size: 0.7em;
+            width: 80%;
+            height: 50%;
+        }
+    }
+
 
     h2 {
         color: white;
@@ -359,7 +445,7 @@
     body {
         font-family: "MyWebFont";
         /* Location of the image */
-        background-image: url(https://thumbs.gfycat.com/DefenselessFrighteningButterfly-size_restricted.gif);
+        background-image: url(https://thumbs.gfycat.com/AccomplishedMatureLemur-size_restricted.gif);
 
         /* Background image is centered vertically and horizontally at all times */
         background-position: center center;
@@ -737,6 +823,62 @@ while the background image is loading */
     }
 </style>
 <script>
+    const countDownClock = (number = 100, format = 'seconds') => {
+
+        const d = document;
+        const daysElement = d.querySelector('.days');
+        const hoursElement = d.querySelector('.hours');
+        const minutesElement = d.querySelector('.minutes');
+        const secondsElement = d.querySelector('.seconds');
+        let countdown;
+        convertFormat(format);
+
+
+        function convertFormat(format) {
+            switch (format) {
+                case 'seconds':
+                    return timer(number);
+                case 'minutes':
+                    return timer(number * 60);
+                case 'hours':
+                    return timer(number * 60 * 60);
+                case 'days':
+                    return timer(number * 60 * 60 * 24);
+            }
+        }
+
+        function timer(seconds) {
+            const now = Date.now();
+            const then = now + seconds * 1000;
+
+            countdown = setInterval(() => {
+                const secondsLeft = Math.round((then - Date.now()) / 1000);
+
+                if (secondsLeft <= 0) {
+                    clearInterval(countdown);
+                    return;
+                };
+
+                displayTimeLeft(secondsLeft);
+
+            }, 1000);
+        }
+
+        function displayTimeLeft(seconds) {
+            daysElement.textContent = Math.floor(seconds / 86400);
+            hoursElement.textContent = Math.floor((seconds % 86400) / 3600);
+            minutesElement.textContent = Math.floor((seconds % 86400) % 3600 / 60);
+            secondsElement.textContent = seconds % 60 < 10 ? `0${seconds % 60}` : seconds % 60;
+        }
+    }
+
+
+    /*
+      start countdown
+      enter number and format
+      days, hours, minutes or seconds
+    */
+    countDownClock(2.7, 'days');
     const d = new Date('November 27, 2021 12:00');
     const now = new Date();
 
@@ -746,9 +888,20 @@ while the background image is loading */
 
     // A $( document ).ready() block.
     $(document).ready(function() {
-        $("header").append("<div class='glitch-window'></div>");
-        //fill div with clone of real header
-        $("h1.glitched").clone().appendTo(".glitch-window");
+
+        if ($('#fileRequest').length) {
+            window.onbeforeunload = function() {
+                return true;
+            };
+        }
+
+
+
+        $("#fileRequest").click(function() {
+            var href = $(this).attr('href');
+            // hope the server sets Content-Disposition: attachment!
+            window.location = href;
+        });
     });
     var audio = document.createElement("AUDIO")
     document.body.appendChild(audio);

@@ -166,7 +166,8 @@ class PaypalController extends Controller
             return redirect()
                 ->route('createTransaction')
                 ->with('success', 'Transaction complete.')
-                ->with('url', $url);
+                ->with('url', $url)
+                ->with('fileName', $finalFolderName);
         } else {
             return redirect()
                 ->route('createTransaction')
