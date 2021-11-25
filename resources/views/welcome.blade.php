@@ -1048,12 +1048,12 @@ while the background image is loading */
 
     .bar.lime .side-0 .growing-bar,
     input[id='lime']:checked~.chart .side-0 .growing-bar {
-        box-shadow: -0.5em -1.5em 4em #76c900;
+        box-shadow: -0.5em -1.5em 4em #5efeb6;
     }
 
     .bar.lime .floor .growing-bar,
     input[id='lime']:checked~.chart .floor .growing-bar {
-        box-shadow: 0em 0em 2em #76c900;
+        box-shadow: 0em 0em 2em #5efeb6;
     }
 
     .bar.white .side-a,
