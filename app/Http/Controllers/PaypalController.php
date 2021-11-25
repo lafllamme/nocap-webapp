@@ -7,6 +7,7 @@ use Srmklive\PayPal\Services\PayPal as PayPalClient;
 use Illuminate\Support\Facades\Storage;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use App\Models\Payment;
+
 class PaypalController extends Controller
 {
     /**
@@ -101,12 +102,34 @@ class PaypalController extends Controller
             return $return;
         }
 
+
+        function search($array, $key)
+        {
+            $results = array();
+
+            if (is_array($array)) {
+                if (isset($array[$key]) && $array[$key]) {
+                    $results[] = $array;
+                }
+
+                foreach ($array as $subarray) {
+                    $results = array_merge($results, search($subarray, $key));
+                }
+            }
+
+            return $results;
+        }
+
+
         //FIX ME: find better solution
-        $cleanedArr = flatten($response);
-        $transactionCode = $cleanedArr[17];
-        $personName = $cleanedArr[5] . ' ' . $cleanedArr[6];
-        $email = $cleanedArr[2];
-        $amount = $cleanedArr[23];
+        $cleanedArr = flatten(search($response, 'id'));
+        
+      
+        $transactionCode = $cleanedArr[2];
+        $personName = $cleanedArr[13] . ' ' . $cleanedArr[14];
+        $email = $cleanedArr[7];
+        $amount = $cleanedArr[10];
+        $paymentMessage = $cleanedArr[1];
 
         $qrData = [
             $personName, $email, $amount, $transactionCode
@@ -117,7 +140,7 @@ class PaypalController extends Controller
         $qrcode = QrCode::size(500)
             ->style('round')
             //->gradient(131, 58, 180, 53, 159, 196, 'radial')
-            ->backgroundColor(163,255,180)
+            ->backgroundColor(163, 255, 180)
             ->errorCorrection('H')
             ->generate($qrString);
 
@@ -136,6 +159,7 @@ class PaypalController extends Controller
         $payment->name = $personName;
         $payment->amount = $amount;
         $payment->email = $email;
+        $payment->paymentMessage = $paymentMessage;
         $payment->save();
 
         if (isset($response['status']) && $response['status'] == 'COMPLETED') {
