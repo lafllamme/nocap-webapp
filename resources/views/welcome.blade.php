@@ -19,32 +19,20 @@
 </head>
 
 <body id="body">
-    <center>
-        <section class="countdown-container">
 
-            <div class="days-container">
-                <div class="days"></div>
-                <div class="days-label">days</div>
-            </div>
 
-            <div class="hours-container">
-                <div class="hours"></div>
-                <div class="hours-label">hours</div>
-            </div>
+    <div class="container2">
+        <div id="countdown">
+            <ul>
+                <li><span id="days"></span>Days</li>
+                <li><span id="hours"></span>Hour</li>
+                <li><span id="minutes"></span>Minutes</li>
+                <li><span id="seconds"></span>Seconds</li>
+            </ul>
+        </div>
+    </div>
 
-            <div class="minutes-container">
-                <div class="minutes"></div>
-                <div class="minutes-label">minutes</div>
-            </div>
 
-            <div class="seconds-container">
-                <div class="seconds"></div>
-                <div class="seconds-label">seconds</div>
-            </div>
-
-        </section>
-    </center>
-    
     <div class='container'>
         <section class='card' id="card1">
             <div class='card_inner'>
@@ -204,65 +192,71 @@
     html {
         height: 100%;
         min-height: 100%;
-    }
-
-    .countdown-container {
-        display: flex;
-        width: 70%;
-        max-width: 40%;
-        justify-content: space-between;
-    }
-
-    .days-container,
-    .hours-container,
-    .minutes-container,
-    .seconds-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background-color: rgba(0, 0, 0, 0.1);
-        border: 5px solid rgba(255, 255, 255, 0.3);
-        width: 140px;
-        height: 140px;
-        border-radius: 99px;
-    }
-
-    .days,
-    .hours,
-    .minutes,
-    .seconds {
-        font-size: 2em;
-        margin: 8px 0;
+        max-width: 80%;
     }
 
 
-    .days-label,
-    .hours-label,
-    .minutes-label,
-    .seconds-label {
+
+    .container {
+        color: #333;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+
+    .container2 {
+        position: relative;
+        color: #333;
+        margin: 0 auto;
+        text-align: center;
+        left: 250px;
+        top: 40px;
+        width: 400px;
+    }
+
+
+    h1 {
+        font-weight: normal;
+        letter-spacing: .125rem;
         text-transform: uppercase;
-        margin-bottom: 6px;
-        margin-left: 6px;
-        margin-right: 6px;
     }
 
-    @media (max-width: 800px) {
-
-        .countdown-container {
-            max-width: 45%;
-        }
-
-        .days-container,
-        .hours-container,
-        .minutes-container,
-        .seconds-container {
-            font-size: 0.7em;
-            width: 80%;
-            height: 50%;
-        }
+    li {
+        display: inline-block;
+        font-size: 1.5em;
+        list-style-type: none;
+        padding: 0.25em;
+        text-transform: uppercase;
     }
 
+    li span {
+        display: block;
+        font-size: 4.5rem;
+    }
+
+    .emoji {
+        display: none;
+        padding: 1rem;
+    }
+
+    .emoji span {
+        font-size: 4rem;
+        padding: 0 .5rem;
+    }
+
+    @media all and (max-width: 768px) {
+        h1 {
+            font-size: calc(1.5rem * var(--smaller));
+        }
+
+        li {
+            font-size: calc(1.125rem * var(--smaller));
+        }
+
+        li span {
+            font-size: calc(3.375rem * var(--smaller));
+        }
+    }
 
     h2 {
         color: white;
@@ -823,6 +817,34 @@ while the background image is loading */
     }
 </style>
 <script>
+    (function() {
+        const second = 1000,
+            minute = second * 60,
+            hour = minute * 60,
+            day = hour * 24;
+
+        const countDown = new Date('November 27, 18:00 2021').getTime(),
+            x = setInterval(function() {
+
+                const now = new Date().getTime(),
+                    distance = countDown - now;
+
+                document.getElementById("days").innerText = Math.floor(distance / (day)),
+                    document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+                    document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+                    document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+
+                //do something later when date is reached
+                if (distance < 0) {
+                    document.getElementById("headline").innerText = "It's my birthday!";
+                    document.getElementById("countdown").style.display = "none";
+                    document.getElementById("content").style.display = "block";
+                    clearInterval(x);
+                }
+                //seconds
+            }, 0)
+    }());
+
     const countDownClock = (number = 100, format = 'seconds') => {
 
         const d = document;
