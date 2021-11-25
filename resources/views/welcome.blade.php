@@ -1043,7 +1043,7 @@ while the background image is loading */
     input[id='lime']:checked~.chart .side-a,
     .bar.lime .growing-bar,
     input[id='lime']:checked~.chart .growing-bar {
-        background-color: rgba(118, 201, 0, 0.6);
+        background-color: rgba(94, 254, 182, 0.6);
     }
 
     .bar.lime .side-0 .growing-bar,
