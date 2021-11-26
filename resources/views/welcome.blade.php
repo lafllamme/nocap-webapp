@@ -1638,6 +1638,7 @@ END // CHART'S RULES
         const body = document.getElementById('body');
         body.classList.add("shake-crazy");
         body.classList.add("shake-constant");
+
         console.log(body);
     }
     (function() {
@@ -1677,6 +1678,10 @@ END // CHART'S RULES
 
     // A $( document ).ready() block.
     $(document).ready(function() {
+
+        setTimeout(function() {
+            $('#body').removeClass('shake-crazy').removeClass('shake-constant');
+        }, 5000);
 
         if ($('#fileRequest').length) {
             window.onbeforeunload = function() {
