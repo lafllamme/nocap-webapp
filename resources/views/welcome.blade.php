@@ -14,6 +14,7 @@
     </script>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://csshake.surge.sh/csshake.min.css">
 
 
 </head>
@@ -42,7 +43,7 @@
                         </div>
                     </div>
                 </div>
-                <p>30% tickets left</p>
+                <p onclick="shake()">30% tickets left</p>
             </article>
 
         </section>
@@ -59,7 +60,7 @@
     </div>
 
     <div class='container'>
-        <section class='card' id="card1">
+        <section class='card'>
             <div class='card_inner'>
                 <div class='card_inner__circle'>
                     <img src='https://cdn-icons-png.flaticon.com/512/3523/3523059.png'>
@@ -217,7 +218,6 @@
     html {
         height: 100%;
         min-height: 100%;
-        max-width: 80%;
     }
 
 
@@ -230,13 +230,12 @@
 
 
     .container2 {
-        position: absolute;
-        color: #333;
+        position: relative;
+        color: #5efeb6;
         margin: 0 auto;
         text-align: center;
-        left: 15em;
+        left: 18em;
         top: 0em;
-        width: 30em;
     }
 
 
@@ -1635,6 +1634,12 @@ END // CHART'S RULES
     }
 </style>
 <script>
+    function shake() {
+        const body = document.getElementById('body');
+        body.classList.add("shake-crazy");
+        body.classList.add("shake-constant");
+        console.log(body);
+    }
     (function() {
         const second = 1000,
             minute = second * 60,
