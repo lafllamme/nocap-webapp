@@ -1683,7 +1683,7 @@ END // CHART'S RULES
                 return true;
             };
             $('#chart').hide();
-            $('#countdown').hide();
+            // $('#countdown').hide();
 
         }
 
