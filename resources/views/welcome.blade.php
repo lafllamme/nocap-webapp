@@ -26,7 +26,7 @@
             <article>
 
                 <div class="chart">
-                    <div class="bar bar-30 lime">
+                    <div class="bar bar-26 lime">
                         <div class="face top">
                             <div class="growing-bar"></div>
                         </div>
@@ -43,7 +43,7 @@
                         </div>
                     </div>
                 </div>
-                <p onclick="shake()">30% tickets left</p>
+                <p onclick="shake()">26% tickets left</p>
             </article>
 
         </section>
@@ -1042,17 +1042,17 @@ while the background image is loading */
     input[id='lime']:checked~.chart .side-a,
     .bar.lime .growing-bar,
     input[id='lime']:checked~.chart .growing-bar {
-        background-color: rgba(94, 254, 182, 0.6);
+        background-color: rgba(254, 147, 94, 0.6);
     }
 
     .bar.lime .side-0 .growing-bar,
     input[id='lime']:checked~.chart .side-0 .growing-bar {
-        box-shadow: -0.5em -1.5em 4em #5efeb6;
+        box-shadow: -0.5em -1.5em 4em #fe935e;
     }
 
     .bar.lime .floor .growing-bar,
     input[id='lime']:checked~.chart .floor .growing-bar {
-        box-shadow: 0em 0em 2em #5efeb6;
+        box-shadow: 0em 0em 2em #fe935e;
     }
 
     .bar.white .side-a,
