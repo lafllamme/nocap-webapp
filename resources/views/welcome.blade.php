@@ -60,7 +60,7 @@
     </div>
 
     <div class='container'>
-        <section class='card'>
+        <section class='card' id="cardOne">
             <div class='card_inner'>
                 <div class='card_inner__circle'>
                     <img src='https://cdn-icons-png.flaticon.com/512/3523/3523059.png'>
@@ -1670,11 +1670,11 @@ END // CHART'S RULES
             }, 0)
     }());
 
-    const d = new Date('November 27, 2021 12:00');
+    const d = new Date('November 27, 2021 18:00');
     const now = new Date();
 
     if (d - now < 0) {
-        document.getElementById('card1').style.display = "none";
+        document.getElementById('cardOne').style.display = "none";
     }
 
     // A $( document ).ready() block.
@@ -1690,6 +1690,12 @@ END // CHART'S RULES
         }
 
 
+
+        if ($('#fileRequest').length) // use this if you are using id to check
+        {
+            $('#chart').hide();
+
+        }
 
         $("#fileRequest").click(function() {
             var href = $(this).attr('href');
