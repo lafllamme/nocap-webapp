@@ -18,7 +18,7 @@ use App\Http\Controllers\GuestController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('errorpage');
 });
 Route::get('/setup', function () {
     $link = Artisan::call('storage:link');
