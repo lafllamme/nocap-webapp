@@ -54,7 +54,7 @@
                     <p class="message__text">You can check our instagram meanwhile.</p>
                 </div>
                 <div class="error__nav e-nav">
-                    <a href="instagra.com/nocap.cologne" target="_blanck" class="e-nav__link"></a>
+                    <a href="https://instagram.com/nocap.cologne" target="_blanck" class="e-nav__link"></a>
                 </div>
             </div>
             <!-- END Content -->
